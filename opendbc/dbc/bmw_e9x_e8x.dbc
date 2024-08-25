@@ -71,7 +71,7 @@ BO_ 169 Torque2: 8 DME
 BO_ 170 AccPedal: 8 DME
  SG_ Checksum_170 : 0|8@1- (1,0) [0|65535] "" XXX
  SG_ Counter_170 : 8|4@1+ (1,0) [0|15] "" XXX
- SG_ AcceleratorPedalPercentage : 16|16@1+ (0.04,0) [0|100] "" XXX
+ SG_ AcceleratorPedalPercentage : 16|16@1+ (0.0016,0) [0|100] "" XXX
  SG_ EngineSpeed : 32|16@1+ (0.25,0) [0|8000] "rpm" XXX
  SG_ ThrottlelPressed : 50|1@0+ (1,0) [0|1] "" XXX
  SG_ AcceleratorPedalPressed : 52|1@0+ (1,0) [0|7] "" XXX

@@ -1,0 +1,115 @@
+VERSION ""
+
+
+NS_ : 
+		NS_DESC_
+		CM_
+		BA_DEF_
+		BA_
+		VAL_
+		CAT_DEF_
+		CAT_
+		FILTER
+		BA_DEF_DEF_
+		EV_DATA_
+		ENVVAR_DATA_
+		SGTYPE_
+		SGTYPE_VAL_
+		BA_DEF_SGTYPE_
+		BA_SGTYPE_
+		SIG_TYPE_REF_
+		VAL_TABLE_
+		SIG_GROUP_
+		SIG_VALTYPE_
+		SIGTYPE_VALTYPE_
+		BO_TX_BU_
+		BA_DEF_REL_
+		BA_REL_
+		BA_DEF_DEF_REL_
+		BU_SG_REL_
+		BU_EV_REL_
+		BU_BO_REL_
+		SG_MUL_VAL_
+
+BS_:
+
+BU_:
+
+
+BO_ 33 GPSTime: 8 Vector__XXX
+	SG_ GPS_YY : 8|8@1+ (1,0) [0|99] "" Vector__XXX
+	SG_ GPS_MM : 16|8@1+ (1,0) [1|12] "" Vector__XXX
+	SG_ GPS_DD : 24|8@1+ (1,0) [0|60] "" Vector__XXX
+	SG_ GPS_hr : 32|8@1+ (1,0) [0|23] "" Vector__XXX
+	SG_ GPS_min : 40|8@1+ (1,0) [0|60] "" Vector__XXX
+	SG_ GPS_sec : 48|8@1+ (1,0) [0|60] "" Vector__XXX
+	SG_ GPS_gnssFixOK : 56|1@1+ (1,0) [0|1] "" Vector__XXX
+	SG_ GPS_diffSoln : 57|1@1+ (1,0) [0|1] "" Vector__XXX
+	SG_ GPS_confirmedAvai : 61|1@1+ (1,0) [0|1] "" Vector__XXX
+	SG_ GPS_confirmedDate : 62|1@1+ (1,0) [0|1] "" Vector__XXX
+	SG_ GPS_confirmedTime : 63|1@1+ (1,0) [0|1] "" Vector__XXX
+	SG_ GPS_satcnt : 0|8@1+ (1,0) [0|20] "" Vector__XXX
+
+
+BO_ 34 Nanospeed: 8 Vector__XXX
+	SG_ GPS_NanoS : 0|32@1- (1,0) [-2147483648|2147483647] "nS" Vector__XXX
+	SG_ GPS_Gndspd : 32|32@1+ (0.0036,0) [0|4294967295] "km/s" Vector__XXX
+
+BO_ 35 LatLon: 8 Vector__XXX
+	SG_ GPS_Lon : 0|32@1- (0.0000001,0) [-2147483648|2147483647] "" Vector__XXX
+	SG_ GPS_Lat : 32|32@1- (0.0000001,0) [-2147483648|2147483647] "" Vector__XXX
+
+BO_ 80 WitPlex: 8 Vector__XXX
+	SG_ id M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+	SG_ mux M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_YY m80M : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_Ax m81M : 16|16@1- (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_Wx m82M : 16|16@1- (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_Roll m83M : 16|16@1- (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_Hx m84M : 16|16@1- (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_MM m80M : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_Ay m81M : 32|16@1- (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_Wy m82M : 32|16@1- (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_Pitch m83M : 32|16@1- (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_Hy m84M : 32|16@1- (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_DD m80M : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_Az m81M : 48|16@1- (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_Wz m82M : 48|16@1- (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_Yaw m83M : 48|16@1- (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_Hz m84M : 48|16@1- (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_hr m80M : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_min m80M : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+	SG_ WIT_sec m80M : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 36 GPSmslhd: 8 Vector__XXX
+	SG_ GPS_msl : 0|32@1+ (0.001,0) [0|0] "m" Vector__XXX
+	SG_ GPS_heading : 32|32@1+ (0.00001,0) [0|0] "deg" Vector__XXX
+	
+
+
+CM_ BO_ 33 "UTC Time GPS";
+CM_ BO_ 34 "nanoSec speed combo GPS";
+CM_ BO_ 35 "LatLon GPS";
+CM_ BO_ 80 "WitMessage";
+CM_ BO_ 36 "gps msl heading";
+
+
+SG_MUL_VAL_ 80 WIT_YY mux 80-80;
+SG_MUL_VAL_ 80 WIT_Ax mux 81-81;
+SG_MUL_VAL_ 80 WIT_Wx mux 82-82;
+SG_MUL_VAL_ 80 WIT_Roll mux 83-83;
+SG_MUL_VAL_ 80 WIT_Ay mux 81-81;
+SG_MUL_VAL_ 80 WIT_Wy mux 82-82;
+SG_MUL_VAL_ 80 WIT_Pitch mux 83-83;
+SG_MUL_VAL_ 80 WIT_Hy mux 84-84;
+SG_MUL_VAL_ 80 WIT_DD mux 80-80;
+SG_MUL_VAL_ 80 WIT_Az mux 81-81;
+SG_MUL_VAL_ 80 WIT_Wz mux 82-82;
+SG_MUL_VAL_ 80 WIT_Yaw mux 83-83;
+SG_MUL_VAL_ 80 WIT_Hz mux 84-84;
+SG_MUL_VAL_ 80 WIT_hr mux 80-80;
+SG_MUL_VAL_ 80 WIT_min mux 80-80;
+SG_MUL_VAL_ 80 WIT_sec mux 80-80;
+SG_MUL_VAL_ 80 WIT_Hx mux 84-84;
+SG_MUL_VAL_ 80 WIT_MM mux 80-80;
+
